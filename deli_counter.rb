@@ -1,34 +1,33 @@
 # Write your code here.
 
-# You need to be able to explain why you created a new Array
-# Explain why you need to do things in order (why the iteration goes inside the if statement)
-# What the join method is doing
-# What is push doing
-# Understand how to test by working in the terminal and calling the file (ruby file.name)
-
-# Task:
-# Convert the for each with index into a while or do loop with counter
-
 def line(katz_deli)
-  new_array = [] 
+  the_line = Array.new 
   if katz_deli.length == 0 
     puts "The line is currently empty."
-  elsif katz_deli.length >= 1  
+  elsif katz_deli.length >= 1 
     katz_deli.each_with_index do |customer, index|
-      index = index + 1
-      new_array.push("#{index}. #{customer}")
+      index = index + 1 
+      the_line.push("#{index}. #{customer}")
     end 
-    puts "The line is currently: #{new_array.join(" ")}"
+    puts "The line is currently: #{the_line.join(" ")}"
   end 
 end
 
-katz_deli = ["Cam", "Kev", "Sean"]
-line(katz_deli)
 
-def take_a_number(katz_deli, new_customer)
-  katz_deli.push(new_customer)
-  puts "Welcome, #{new_customer}. You are number #{katz_deli.length} in line."
-end 
+# def take_a_number(katz_deli, new_customer)
+#   katz_deli.push(new_customer)
+#   puts "Welcome, #{new_customer}. You are number #{katz_deli.length} in line."
+# end 
+
+# A number tha increments every time this method run. push customer into line with number and return "Welcome, you are number __"
+
+position = 1 
+
+def take_a_number(katz_deli)
+   katz_deli.push(position)
+    return "Welcome, you are number #{position}"
+  position += 1 
+end
 
 def now_serving(katz_deli)
   if katz_deli.length == 0  
@@ -38,4 +37,10 @@ def now_serving(katz_deli)
   end 
   katz_deli.shift
 end 
+
+
+
+
+
+
 
